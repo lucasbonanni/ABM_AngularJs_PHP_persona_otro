@@ -1,0 +1,98 @@
+<html>
+<head>
+	<title>ABM angular PHP</title>
+	  
+		<!--?php require_once"partes/referencias.php" ;/**/?-->
+		<!--final de Estilos-->    
+
+      <!--script type="text/javascript" src="./bower_components/jquery/dist/jquery.js"></script-->
+       	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="http://www.octavio.com.ar/favicon.ico">
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<link rel="stylesheet" type="text/css" href="css/animacion.css">
+
+
+
+	  	<script SRC="bower_components/angular/angular.min.js" TYPE="text/javascript"></script>
+ 	<script SRC="js/app.js" TYPE="text/javascript"></script>
+</head>
+<body ng-app="ABMangularPHP" ng-controller="controlGrilla">
+	<!--?php		
+		require_once"partes/barraDeMenu.php";
+	 ?-->
+
+ 
+              <ul class="nav nav-tabs">
+		         <li  class="btn btn-info animated bounceInLeft" >
+		         	<a href="index.html">
+		         		 <span class="glyphicon glyphicon-list-alt">&nbsp;</span>
+		         		 Inicio
+		         	</a>
+		         </li>
+		         <li class="btn btn-info animated bounceInLeft" >
+		         	<a href="formAlta.html">
+		         		<span class="glyphicon glyphicon-plus-sign">&nbsp;</span>
+		         		Alta
+		         	</a>
+		         </li>
+		         <li  class="btn btn-info animated bounceInLeft" >
+		         	<a href="formGrilla.html"> 
+		         		<span class="glyphicon glyphicon-th" >&nbsp;</span>
+		         			Grilla</a>
+		         		</li>
+		        	<span id="tituloBarra"  class="animated bounceInRight">{{DatoTest}}ABM - PHP - Angular Versión 1.0.1 &nbsp;&nbsp;&nbsp;</span>
+      </ul>
+		
+
+	
+	  <div class="container">
+		<div class="page-header">
+			<center><h1>ABM - PHP - Angular</h1> </center>     
+		</div>
+	  	 
+		           
+					<div class="CajaInicio animated bounceInRight">
+							<h1>Listado de personas</h1>
+							<!-- id="listaPersonas" -->
+								
+								<table class='table table-hover table-responsive' id="listaPersonas">
+									<thead>
+										<tr>
+											<th>  Foto   </th>				
+											<th>  Nombre     </th>
+											<th>  Apellido   </th>
+											<th>  Dni        </th>
+											<th>  BORRAR     </th>
+											<th>  MODIFICAR  </th>
+										</tr> 
+									</thead>
+									<tr ng-repeat="persona in ListadoPersonas">
+
+										<td><img  class='fotoGrilla' ng-src="fotos/{{persona.foto}}" /></td>
+							
+										<td>{{persona.nombre}}</td>
+										<td>{{persona.apellido}}</td>
+										<td>{{persona.dni}}</td>
+
+										<td><button class='btn btn-danger' name='Borrar' ng-click="Borrar(persona)">   <span class='glyphicon glyphicon-remove-circle'>&nbsp;</span>Borrar</button></td>
+										
+										<td><button class='btn btn-warning' name='Modificar' ng-click="Modificar(persona)"><span class='glyphicon glyphicon-edit'>&nbsp;</span>Modificar</button></td>
+															
+									</tr>
+								</table>
+							</div>
+							<input type="search" ng-model="q" placeholder="filter friends..." aria-label="filter friends" />
+  <ul class="example-animate-container">
+    <li class="animate-repeat" ng-repeat="persona in ListadoPersonas| filter:q as results">
+      [{{$index + 1}}] {{persona.nombre}} who is {{persona.apellido}} years old.
+    </li>
+    <li class="animate-repeat" ng-if="results.length == 0">
+      <strong>No results found...</strong>
+    </li>
+  </ul>
+						</div>
+		</div>
+</body>
+</html>
