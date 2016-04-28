@@ -14,8 +14,16 @@
 	<link rel="stylesheet" type="text/css" href="css/animacion.css">
 
 
-	<script SRC="bower_components/angular/angular.min.js" TYPE="text/javascript"></script>
+
+
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
  	<script SRC="js/app.js" TYPE="text/javascript"></script>
+ 	<style type="text/css">
+
+
+
+ 	</style>
 </head>
 <body ng-app="ABMangularPHP" ng-controller="controlAlta">
 	<!--?php		
@@ -45,12 +53,15 @@
       </ul>
 		
 
-	<div class="container">
+	
+
+
+<div class="container">
 		<div class="page-header">
 			<center> <h1>Datos {{DatoTest}}</h1>   </center>     
 		</div>
 		<div class="CajaInicio animated bounceInRight">
-			<h1> <!--?php echo $titulo; ?-->titulo </h1>
+			<h1> titulo </h1>
 
 			<form id="FormIngreso"  enctype="multipart/form-data" >
 				<input type="text" name="apellido" ng-model="persona.apellido" placeholder="ingrese apellido" value="" />
@@ -59,16 +70,13 @@
 				<input type="text" name="nombre" ng-model="persona.nombre" placeholder="ingrese nombre" value="" /> <span id="lblNombre" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*</span>
 				<input type="text" name="dni" ng-model="persona.dni" placeholder="ingrese dni" value=""     /> 
 				<span id="lblDni" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*</span>
-				<p style='color: black;'>*El DNI no se puede modificar.</p> ": "" ; ?>
-				<input type="hidden" name="idOculto" id="id" value="" />
-				<input type="file" name="foto" />
-
+				
 
 				<img  src="fotos/pordefecto.png" class="fotoform" id="foto"/>
-				<p style="  color: black;">*La foto se actualiza al guardar.</p>
+				<p style="  color: black;">*Lae actualiza al guardar.</p>
+				<input type="file" nv-file-select uploader="uploader" class="btn btn-primary" required /><br/>
 
-
-				<a class="btn btn-info " name="guardar" ng-click="Guardar()" ><span class="glyphicon glyphicon-save">&nbsp;</span>Guardar</a>
+				<a class="btn btn-info " name="guardar" ng-click="Guardar()" ><span class="glyphicon glyphicon-save">&nbsp;</span>Guardara s</a>
 					
 				<input type="hidden" value="" id="idParaModificar" name="agregar" />
 				<input type="hidden" value="" id="hdnAgregar" name="agregar" />

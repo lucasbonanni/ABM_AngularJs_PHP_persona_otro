@@ -15,8 +15,15 @@
 
 
 
-	  	<script SRC="bower_components/angular/angular.min.js" TYPE="text/javascript"></script>
+
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
  	<script SRC="js/app.js" TYPE="text/javascript"></script>
+ 	<style type="text/css">
+
+
+
+ 	</style>
 </head>
 <body ng-app="ABMangularPHP" ng-controller="controlGrilla">
 	<!--?php		
@@ -54,10 +61,12 @@
 	  	 
 		           
 					<div class="CajaInicio animated bounceInRight">
+							
 							<h1>Listado de personas</h1>
 							<!-- id="listaPersonas" -->
-								
-								<table class='table table-hover table-responsive' id="listaPersonas">
+								<input type="search" ng-model="q" placeholder="buscar usuario.." aria-label="buscar usuario" />
+							
+								<table class='example-animate-container table table-hover table-responsive' id="listaPersonas">
 									<thead>
 										<tr>
 											<th>  Foto   </th>				
@@ -68,7 +77,9 @@
 											<th>  MODIFICAR  </th>
 										</tr> 
 									</thead>
-									<tr ng-repeat="persona in ListadoPersonas">
+									<tbody>
+										
+									<tr  class="animate-repeat" ng-repeat="persona in ListadoPersonas| filter:q as results">
 
 										<td><img  class='fotoGrilla' ng-src="fotos/{{persona.foto}}" /></td>
 							
@@ -81,18 +92,27 @@
 										<td><button class='btn btn-warning' name='Modificar' ng-click="Modificar(persona)"><span class='glyphicon glyphicon-edit'>&nbsp;</span>Modificar</button></td>
 															
 									</tr>
+									<tr class="animate-repeat" ng-if="results.length == 0">
+										<td></td>						
+										<td> <strong>no hay personas con ese dato...</strong></td>
+										<td></td>
+										<td></td>
+										<td></td>										
+										<td></td>								     
+								    </tr>
+									
+								    <tbody>
 								</table>
 							</div>
-							<input type="search" ng-model="q" placeholder="filter friends..." aria-label="filter friends" />
-  <ul class="example-animate-container">
-    <li class="animate-repeat" ng-repeat="persona in ListadoPersonas| filter:q as results">
-      [{{$index + 1}}] {{persona.nombre}} who is {{persona.apellido}} years old.
-    </li>
-    <li class="animate-repeat" ng-if="results.length == 0">
-      <strong>No results found...</strong>
-    </li>
-  </ul>
+														
 						</div>
 		</div>
 </body>
 </html>
+
+
+
+
+
+
+
