@@ -11,8 +11,8 @@ var app = angular.module('ABMangularPHP', ['ngAnimate','ui.router','angularFileU
 
 .state('menu', {
     views: {
-      'principal': { templateUrl: 'menu.html',controller: 'controlMenu' },
-      'menuSuperior': {templateUrl: 'menuSuperior.html'}
+      'principal': { templateUrl: 'template/menu.html',controller: 'controlMenu' },
+      'menuSuperior': {templateUrl: 'template/menuSuperior.html'}
     }
     ,url:'/menu'
   })
@@ -21,16 +21,16 @@ var app = angular.module('ABMangularPHP', ['ngAnimate','ui.router','angularFileU
     .state('grilla', {
     url: '/grilla',
     views: {
-      'principal': { templateUrl: 'templateGrilla.html',controller: 'controlGrilla' },
-      'menuSuperior': {templateUrl: 'menuSuperior.html'}
+      'principal': { templateUrl: 'template/templateGrilla.html',controller: 'controlGrilla' },
+      'menuSuperior': {templateUrl: 'template/menuSuperior.html'}
     }
   })
 
     .state('alta', {
     url: '/alta',
     views: {
-      'principal': { templateUrl: 'templateUsuario.html',controller: 'controlAlta' },
-      'menuSuperior': {templateUrl: 'menuSuperior.html'}
+      'principal': { templateUrl: 'template/templateUsuario.html',controller: 'controlAlta' },
+      'menuSuperior': {templateUrl: 'template/menuSuperior.html'}
     }
 
   
@@ -39,8 +39,8 @@ var app = angular.module('ABMangularPHP', ['ngAnimate','ui.router','angularFileU
       .state('modificar', {
     url: '/modificar/{id}?:nombre:apellido:dni:foto',
      views: {
-      'principal': { templateUrl: 'templateUsuario.html',controller: 'controlModificacion' },
-      'menuSuperior': {templateUrl: 'menuSuperior.html'}
+      'principal': { templateUrl: 'template/templateUsuario.html',controller: 'controlModificacion' },
+      'menuSuperior': {templateUrl: 'template/menuSuperior.html'}
     }
 
   })

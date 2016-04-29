@@ -24,7 +24,7 @@
 			        	<!-- nombre del archivo -->
 			            Archivo: <span ng-bind="item.file.name"></span><br/>
 			            <!-- imagen del archivo -->
-			            <div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 200 }"></div>
+			            <div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 300 }"></div>
 			            <!-- boton upload. Lo puedo usar para carar las fotos o crear
 			            	mi propia funcion y llamar a uploader.uploadAll() -->
 			            <!-- <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
@@ -39,7 +39,7 @@
 			            </button-->
 
 			            <!-- boton remove -->
-			            <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+			            <button type="button" class="btn btn-danger " ng-click="item.remove()">
 			                <span class="glyphicon glyphicon-trash"></span> cambiar
 			            </button>
 			        </li>		
