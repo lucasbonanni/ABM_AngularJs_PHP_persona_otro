@@ -12,36 +12,66 @@
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<link rel="stylesheet" type="text/css" href="css/animacion.css">
+	<link rel="stylesheet" type="text/css" href="css\bootstrap\css\bootstrap.min.css">
 	<!--final de Estilos-->    
 
 
- 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
-  	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
-  	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-  	<script src="bower_components/angular-file-upload/dist/angular-file-upload.min.js"></script>
+ 	<script SRC="bower_components/angular/angular.min.js" TYPE="text/javascript"></script>
  	<script SRC="js/app.js" TYPE="text/javascript"></script>
- 	<script type="text/javascript" src="js/directivas/ngThumb.js"></script>
- 	<style type="text/css">
-
-
-
- 	</style>
 	
 </head>
-<body ng-app="ABMangularPHP" 
+<body ng-app="ABMangularPHP" ng-controller="controlMenu">
 	<!--?php		
 		require_once"partes/barraDeMenu.php";
 	 ?-->
 
  
-	<div ui-view="menuSuperior">
+              <ul class="nav nav-tabs">
+		         <li  class="btn btn-info animated bounceInLeft" >
+		         	<a href="index.html">
+		         		 <span class="glyphicon glyphicon-list-alt">&nbsp;</span>
+		         		 Inicio 
+		         	</a>
+		         </li>
+		         <li class="btn btn-info animated bounceInLeft" >
+		         	<a href="formAlta.html">
+		         		<span class="glyphicon glyphicon-plus-sign">&nbsp;</span>
+		         		Alta
+		         	</a>
+		         </li>
+		         <li  class="btn btn-info animated bounceInLeft" >
+		         	<a href="formGrilla.html"> 
+		         		<span class="glyphicon glyphicon-th" >&nbsp;</span>
+		         			Grilla</a>
+		         		</li>
+		        	<span id="tituloBarra"  class="animated bounceInRight">{{DatoTest}}ABM - PHP - Angular Versión 1.0.1 &nbsp;&nbsp;&nbsp;</span>
+      </ul>
 		
-	
-          
-	</div><!--del view menuSuperior-->
 
-	<div ui-view="principal">
-		
-	</div><!--del view-->
+	
+	  <div class="container">
+		<div class="page-header">
+			<center><h1>ABM - PHP - Angular</h1> </center>     
+		</div>
+	  	 
+		           
+					<div class="CajaInicio animated bounceInRight">
+							<h1>PERSONAS</h1>
+						
+							<form id="FormIngreso">
+ 										
+									    <a href="formAlta.html" class="list-group-item  list-group-item list-group-item-info">
+									      <h4 class="list-group-item-heading">Alta de Personas</h4>
+									    </a>
+										
+										<a href="formGrilla.html" class="list-group-item  list-group-item list-group-item-info">
+									      <h4 class="list-group-item-heading">Grilla de Personas</h4>
+									    </a>
+									
+									  </div>
+									
+							</form>
+						</div>
+		</div>
 </body>
 </html>

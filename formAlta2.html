@@ -1,0 +1,173 @@
+<html>
+   <head>
+      <title>ABM angular PHP</title>
+      <!--?php require_once"partes/referencias.php" ;/**/?-->
+      <!--final de Estilos-->    
+      <!--script type="text/javascript" src="./bower_components/jquery/dist/jquery.js"></script-->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" href="http://www.octavio.com.ar/favicon.ico">
+      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="css/estilo.css">
+      <link rel="stylesheet" type="text/css" href="css/animacion.css">
+      <script SRC="bower_components/angular/angular.min.js" TYPE="text/javascript"></script>
+      <script SRC="js/app.js" TYPE="text/javascript"></script>
+
+
+<!--   VEX alert modal windows references
+
+
+  <script type="text/javascript" language="javascript"
+        src="bower_components/jquery/dist/jquery.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+
+<script src="bower_components/vex/dist/js/vex.combined.min.js"></script>
+<script>vex.defaultOptions.className = 'vex-theme-default'</script>
+<link rel="stylesheet" href="bower_components/vex/dist/css/vex.css" />
+<link rel="stylesheet" href="bower_components/vex/dist/css/vex-theme-default.css" />
+
+
+-->
+
+<!--  Vex modal windows launch on load script
+
+
+<script type="text/javascript" language="javascript">
+
+    $(document).ready(function(){
+		        vex.dialog.alert({
+    message: 'Are you absolutely sure you want to destroy the alien planet?',
+    callback: function (value) {
+        if (value) {
+            console.log('Successfully destroyed the planet.')
+        } else {
+            console.log('Chicken.')
+        }
+    }
+})
+    });
+</script> -->
+   </head>
+   <body ng-app="ABMangularPHP" ng-controller="controlAlta" >
+      <ul class="nav nav-tabs">
+         <li  class="btn btn-info animated bounceInLeft" >
+            <a href="index.html">
+            <span class="glyphicon glyphicon-list-alt">&nbsp;</span>
+            Inicio
+            </a>
+         </li>
+         <li class="btn btn-info animated bounceInLeft" >
+            <a href="formAlta.html">
+            <span class="glyphicon glyphicon-plus-sign">&nbsp;</span>
+            Alta
+            </a>
+         </li>
+         <li  class="btn btn-info animated bounceInLeft" >
+            <a href="formGrilla.html"> 
+            <span class="glyphicon glyphicon-th" >&nbsp;</span>
+            Grilla</a>
+         </li>
+         <span id="tituloBarra"  class="animated bounceInRight">{{DatoTest}}ABM - PHP - Angular Versión 1.0.1 &nbsp;&nbsp;&nbsp;</span></ul>
+      <div class="container">
+
+         <form name="FormIngreso" class="form-control"  enctype="multipart/form-data" style="height:auto !important; margin-bottom: 30px; " novalidate >
+            	<h2></h2>
+               <!--<input type="checkbox" ng-model="verdatos" value="verdatos"> <br>
+                  CajaInicio animated bounceInRight
+                  
+                  		-->
+               <!--Campos necesarios:
+                  http://www.w3schools.com/angular/angular_validation.asp
+                  nombre:
+                  apellido:
+                  edad:(number)
+                  sexo:(radio button).
+                  dni:(number)
+                  mail:(email)
+                  estado civil:(select-option)
+                  fecha nacimiento:(date)
+                  clave:(password)
+                  copia de clave:(password)
+                  lenguajes de programacion(checkbox): c,c#, javaScript,PHP,vb.Net
+                  {{FormIngreso.$invalid}}
+                  -->
+               <div class="form-group">
+               		</br>
+                  <label  >Apellido : </label>
+                  <input type="text" name="apellido" ng-model="persona.apellido" placeholder="ingrese apellido" value="" class="form-control" required/>
+                  <!--<span id="lblApellido" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*
+                     </span>-->
+                  <label  >Nombre:</label>
+                  <input type="text"  ng-model="persona.nombre" placeholder="ingrese nombre" value=""  class="form-control" required/> 
+                  <label  >Edad:</label>
+                  <input type="text"  ng-model="persona.edad" placeholder="ingrese edad" value="" class="form-control" required/> 
+                  <label>Fecha Nacimiento</label>
+                  <input type="date" ng-model="fechaNacimiento" class="form-control" required/>
+
+               </div>
+
+	            <div class="form-group">
+	               <label>Estado Civil:</label>
+	               <select class="form-control" value="" placeholder="">
+					  <option value="Soltero/a">Soltero/a</option>
+					  <option value="Casado/a">Casado/a</option>
+					  <option value="Viudo/a">Viudo/a</option>
+					</select>
+
+               <label  >Dni:</label>
+               <input type="text" name="dni" ng-model="persona.dni" placeholder="ingrese dni" value=""   class="form-control"  /> 
+               	</div>
+               	<div class="form-group">
+	               <label>Sexo:</label>
+	               <label  class="checkbox-inline"><input type="radio" ng-model="persona.sexo" value="Masculino"> Masculino</label>
+	               <label class="checkbox-inline" ><input type="radio" ng-model="persona.sexo" value="Femenino"> Femenino</label>
+	               <label class="checkbox-inline" ><input type="radio" ng-model="persona.sexo" value="other"> Otro</label>
+	            </div>
+               	</br>
+               	<div class="form-group">
+               <label> <span ng-show="FormIngreso.$invalid">*</span> Mail:</label>
+               <input type="email" name="correo" ng-model="persona.correo" placeholder="ingrese correo electronico" class="form-control" /> 
+               <!--<p style='color: black;'>	{{ persona.nombre + persona.apellido }}*El DNI nosss se modificar.</p>-->
+               </div>
+               </br>
+               <div class="form-group">
+               		<label  >Password:</label>
+               		<input type="password" class="form-control" />
+               		<label  >Confirme password:</label>
+               		<input type="password" class="form-control" />
+               </div>
+               </br>
+               <input type="hidden" name="idOculto" id="id" value="" />
+               <!--
+                  <input type="file" name="foto" />
+                  <img  src="fotos/pordefecto.png" class="fotoform" id="foto"/>
+                  <p style="  color: black;">*La foto se actualiza al guardar.</p>
+                  -->
+                <div class="form-group">
+                <label> Lenguaje  de programacion</label> </br>
+                <label class="checkbox-inline">
+				  <input type="checkbox" id="inlineCheckbox1" value="C#"> C#
+				</label>
+				<label class="checkbox-inline">
+				  <input type="checkbox" id="inlineCheckbox2" value="Angular"> Angular
+				</label>
+				<label class="checkbox-inline">
+				  <input type="checkbox" id="inlineCheckbox3" value="PHP"> PHP
+				</label>
+				<label class="checkbox-inline">
+				  <input type="checkbox" id="inlineCheckbox3" value="Java"> Java
+				</label>
+				<label class="checkbox-inline">
+				  <input type="checkbox" id="inlineCheckbox3" value="VisualBasic"> Visual Basic
+				</label>
+				</div>
+				</br>
+               <a class="btn btn-info " ng-disable="FormIngreso.$invalid" ng-click="Guardar()" ><span class="glyphicon glyphicon-save">&nbsp;</span>Guardar</a>
+               <input type="hidden" value="" id="idParaModificar" name="agregar" />
+               <input type="hidden" value="" id="hdnAgregar" name="agregar" />
+         </form>
+      
+      </div>
+   </body>
+</html>

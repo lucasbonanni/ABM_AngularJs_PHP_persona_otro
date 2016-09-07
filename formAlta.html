@@ -1,0 +1,150 @@
+<html>
+<head>
+	<title>ABM angular PHP</title>
+	  
+		<!--?php require_once"partes/referencias.php" ;/**/?-->
+		<!--final de Estilos-->    
+
+      <!--script type="text/javascript" src="./bower_components/jquery/dist/jquery.js"></script-->
+       	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="http://www.octavio.com.ar/favicon.ico">
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<link rel="stylesheet" type="text/css" href="css/animacion.css">
+
+
+	<script SRC="bower_components/angular/angular.min.js" TYPE="text/javascript"></script>
+ 	<script SRC="js/app.js" TYPE="text/javascript"></script>
+</head>
+<body ng-app="ABMangularPHP" ng-controller="controlAlta">
+	<!--?php		
+		require_once"partes/barraDeMenu.php";
+	 ?-->
+
+ 
+              <ul class="nav nav-tabs">
+		         <li  class="btn btn-info animated bounceInLeft" >
+		         	<a href="index.html">
+		         		 <span class="glyphicon glyphicon-list-alt">&nbsp;</span>
+		         		 Inicio
+		         	</a>
+		         </li>
+		         <li class="btn btn-info animated bounceInLeft" >
+		         	<a href="formAlta.html">
+		         		<span class="glyphicon glyphicon-plus-sign">&nbsp;</span>
+		         		Alta
+		         	</a>
+		         </li>
+		         <li  class="btn btn-info animated bounceInLeft" >
+		         	<a href="formGrilla.html"> 
+		         		<span class="glyphicon glyphicon-th" >&nbsp;</span>
+		         			Grilla</a>
+		         		</li>
+		        	<span id="tituloBarra"  class="animated bounceInRight">{{DatoTest}}ABM - PHP - Angular Versión 1.0.1 &nbsp;&nbsp;&nbsp;</span>
+      </ul>
+		
+
+	<div class="container">
+		<div class="page-header">
+			<center> <h1>Datos {{DatoTest}}</h1>   </center>     
+		</div>
+		<div class="CajaInicio animated bounceInRight">
+			<h1> titulo </h1>
+
+			<form name="FormIngreso"  enctype="multipart/form-data" novalidate >
+
+				<input type="checkbox" ng-model="verdatos" value="verdatos"> <br>
+
+
+				<!--Campos necesarios:
+						http://www.w3schools.com/angular/angular_validation.asp
+						nombre:
+						apellido:
+						edad:(number)
+						sexo:(radio button).
+						dni:(number)
+						mail:(email)
+						estado civil:(select-option)
+						fecha nacimiento:(date)
+						clave:(password)
+						copia de clave:(password)
+						lenguajes de programacion(checkbox): c,c#, javaScript,PHP,vb.Net
+				-->
+				<label  >Apellido : {{FormIngreso.$invalid}}</label>
+				<input type="text" name="apellido" ng-model="persona.apellido" placeholder="ingrese apellido" value=""  required/>
+				<span id="lblApellido" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*
+				</span>
+
+				<label  >Nombre:</label>
+				<input type="text"  ng-model="persona.nombre" placeholder="ingrese nombre" value="" /> <span id="lblNombre" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*</span>
+
+				<label  >edad:</label>
+				<input type="text"  ng-model="persona.edad" placeholder="ingrese edad" value=""     /> 
+				<span id="lblDni" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*</span>
+
+
+				<label  >sexo:</label><br>
+				 <input type="radio" ng-model="persona.sexo" value="Masculino"><label  >Masculino</label> <br>
+				 <input type="radio" ng-model="persona.sexo" value="Femenino"> <label  >Femenino</label><br>
+				 <input type="radio" ng-model="persona.sexo" value="other"><label  >Otro</label> <br>
+
+
+				<span id="lblDni" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*</span>
+
+				<label  >Dni:</label>
+				<input type="text" name="dni" ng-model="persona.dni" placeholder="ingrese dni" value=""     /> 
+				<span id="lblDni" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*</span>
+
+				<label  >mail:</label>
+				<input type="email"  ng-model="persona.correo" placeholder="ingrese correo electronico" /> 
+				<span ng-if="">*</span>
+
+
+
+
+
+
+
+
+
+				<p style='color: black;'>	{{ persona.nombre + persona.apellido }}*El DNI nosss se modificar.</p> 
+			
+				<input type="hidden" name="idOculto" id="id" value="" />
+				<!--
+				<input type="file" name="foto" />
+				<img  src="fotos/pordefecto.png" class="fotoform" id="foto"/>
+				<p style="  color: black;">*La foto se actualiza al guardar.</p>
+				-->
+
+				<a class="btn btn-info " ng-disable="FormIngreso.$invalid" ng-click="Guardar()" ><span class="glyphicon glyphicon-save">&nbsp;</span>Guardar</a>
+					
+				<input type="hidden" value="" id="idParaModificar" name="agregar" />
+				<input type="hidden" value="" id="hdnAgregar" name="agregar" />
+				</div>
+
+			</form>
+	</div>
+	</div>
+</body>
+</html>
+
+<!-- 
+orm State and Input State
+AngularJS is constantly updating the state of both the form and the input fields.
+Input fields have the following states:
+$untouched The field has not been touched yet
+$touched The field has been touched
+$pristine The field has not been modified yet
+$dirty The field has been modified
+$invalid The field content is not valid
+$valid The field content is valid
+They are all properties of the input field, and are either true or false.
+Forms have the following states:
+$pristine No fields have been modified yet
+$dirty One or more have been modified
+$invalid The form content is not valid
+$valid The form content is valid
+$submitted The form is submitted
+They are all properties of the form, and are either true or false.
+-->
