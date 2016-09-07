@@ -1,8 +1,18 @@
-.ng-invalid .ng-dirty{
+.ng-invalid.ng-dirty{
   border-color:#FA787E;
+
 }
 
-.ng-valid .ng-dirty{
+form.ng-invalid.ng-dirty{
+  border-color:#FA787E;
+  background: 
+}
+
+form>input.ng-invalid.ng-dirty{
+color:#FA787E;
+}
+
+.ng-valid.ng-dirty{
   border-color:#78FA89;
 }
 
