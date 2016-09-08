@@ -127,7 +127,7 @@
                 </div>
                 <div class="form-group has-feedback">
                     <label class="control-label" >Dni:</label>
-                    <input type="text" name="dni" ng-model="persona.dni" placeholder="ingrese dni" value=""   class="form-control" required="" /> 
+                    <input type="text" name="dni" ng-model="persona.dni" placeholder="ingrese dni" value=""   class="form-control" ng-Minlength="8" required="" /> 
                     <span class="glyphicon glyphicon-ok form-control-feedback"  aria-hidden="true"" ng-show="FormIngreso.dni.$touched && FormIngreso.dni.$valid"></span>
                     <span class="glyphicon glyphicon-remove form-control-feedback"  ng-show="FormIngreso.dni.$touched && FormIngreso.dni.$invalid"></span>
                 </div>
@@ -150,10 +150,12 @@
                 </div>
                 <div class="form-group has-feedback">
                     <label class="control-label" >Password:</label>
-                    <input type="password" name="password" class="form-control"  required=""/>
+                    <input type="password" name="password" ng-model="persona.password" class="form-control" ng-Minlength="8" required=""/>
                     <label  >Confirme password:</label>
-                    <input type="password" name="passConf" class="form-control"  required />
-                    <span tyle="color:black;">1561{{FormIngreso.password.$valid}}</span>
+                    <input type="password" name="passConf"  ng-model="persona.passConf" class="form-control" ng-Minlength="8" ng-required="persona.password!=persona.passConf" required="" />
+                    <span tyle="color:black;">
+                    pass1{{FormIngreso.password.$valid}}</br>
+                    pass2{{FormIngreso.passConf.$valid}}</span>
                 </div>
                 <input type="hidden" name="idOculto" id="id" value="" />
                 <!--
@@ -179,7 +181,7 @@
                     <input type="checkbox" id="inlineCheckbox3" value="VisualBasic"> Visual Basic
                     </label>
                 </div>
-                <button class="btn btn-info " ng-disable="FormIngreso.correo.$invalid && FormIngreso.correo.$untouched && FormIngreso.correo.$dirty" ng-click="Guardar()" ><span class="glyphicon glyphicon-save">&nbsp;</span>Guardar</</button>
+                <button class="btn btn-info " ng-disabled="FormIngreso.$invalid && persona.password!=persona.passConf && FormIngreso.password.$valid && FormIngreso.passConf.$valid" ng-click="Guardar()" ><span class="glyphicon glyphicon-save">&nbsp;</span>Guardar</</button>
                 <input type="hidden" value="" id="idParaModificar" name="agregar" />
                 <input type="hidden" value="" id="hdnAgregar" name="agregar" />
             </form>
