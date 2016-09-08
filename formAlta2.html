@@ -150,9 +150,10 @@
                 </div>
                 <div class="form-group has-feedback">
                     <label class="control-label" >Password:</label>
-                    <input type="password" class="form-control" />
+                    <input type="password" name="password" class="form-control"  required=""/>
                     <label  >Confirme password:</label>
-                    <input type="password" class="form-control" />
+                    <input type="password" name="passConf" class="form-control"  required />
+                    <span tyle="color:black;">1561{{FormIngreso.password.$valid}}</span>
                 </div>
                 <input type="hidden" name="idOculto" id="id" value="" />
                 <!--
