@@ -1,77 +1,33 @@
+<!DOCTYPE html>
 <html>
-<head>
-	<title>ABM angular PHP</title>
-	  
-		<!--?php require_once"partes/referencias.php" ;/**/?-->
-		
-
-      <!--script type="text/javascript" src="./bower_components/jquery/dist/jquery.js"></script-->
-       	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="http://www.octavio.com.ar/favicon.ico">
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/estilo.css">
-	<link rel="stylesheet" type="text/css" href="css/animacion.css">
-	<link rel="stylesheet" type="text/css" href="css\bootstrap\css\bootstrap.min.css">
-	<!--final de Estilos-->    
-
-
- 	<script SRC="bower_components/angular/angular.min.js" TYPE="text/javascript"></script>
- 	<script SRC="js/app.js" TYPE="text/javascript"></script>
-	
-</head>
-<body ng-app="ABMangularPHP" ng-controller="controlMenu">
-	<!--?php		
-		require_once"partes/barraDeMenu.php";
-	 ?-->
-
- 
-              <ul class="nav nav-tabs">
-		         <li  class="btn btn-info animated bounceInLeft" >
-		         	<a href="index.html">
-		         		 <span class="glyphicon glyphicon-list-alt">&nbsp;</span>
-		         		 Inicio 
-		         	</a>
-		         </li>
-		         <li class="btn btn-info animated bounceInLeft" >
-		         	<a href="formAlta.html">
-		         		<span class="glyphicon glyphicon-plus-sign">&nbsp;</span>
-		         		Alta
-		         	</a>
-		         </li>
-		         <li  class="btn btn-info animated bounceInLeft" >
-		         	<a href="formGrilla.html"> 
-		         		<span class="glyphicon glyphicon-th" >&nbsp;</span>
-		         			Grilla</a>
-		         		</li>
-		        	<span id="tituloBarra"  class="animated bounceInRight">{{DatoTest}}ABM - PHP - Angular Versión 1.0.1 &nbsp;&nbsp;&nbsp;</span>
-      </ul>
-		
-
-	
-	  <div class="container">
-		<div class="page-header">
-			<center><h1>ABM - PHP - Angular</h1> </center>     
-		</div>
-	  	 
-		           
-					<div class="CajaInicio animated bounceInRight">
-							<h1>PERSONAS</h1>
-						
-							<form id="FormIngreso">
- 										
-									    <a href="formAlta.html" class="list-group-item  list-group-item list-group-item-info">
-									      <h4 class="list-group-item-heading">Alta de Personas</h4>
-									    </a>
-										
-										<a href="formGrilla.html" class="list-group-item  list-group-item list-group-item-info">
-									      <h4 class="list-group-item-heading">Grilla de Personas</h4>
-									    </a>
-									
-									  </div>
-									
-							</form>
-						</div>
-		</div>
-</body>
+    <head>
+        <title>Clase 4</title>
+        <!--En el index se debe referenciar todos los archivos de las distintas paginas que se vinculan a traves de los estados-->
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/landing-page.css">
+        <script SRC="bower_components/angular/angular.min.js" TYPE="text/javascript"></script>
+        <script SRC="bower_components/angular-ui-router/release/angular-ui-router.min.js" TYPE="text/javascript"></script>
+        <script SRC="js/miAplicacion.js" TYPE="text/javascript"></script>
+        <!-- jQuery -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/estilo.css">
+        <link rel="stylesheet" type="text/css" href="css/animacion.css">
+    </head>
+    <body>
+        <ul class="list-inline intro-social-buttons">
+            <li>
+                <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+            </li>
+            <li>
+                <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+            </li>
+            <li>
+                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+            </li>
+        </ul>
+        <div ui-view >
+        </div>
+    </body>
 </html>
