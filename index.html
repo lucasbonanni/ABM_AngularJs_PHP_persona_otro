@@ -1,77 +1,138 @@
+<!doctype html>
 <html>
-<head>
-	<title>ABM angular PHP</title>
-	  
-		<!--?php require_once"partes/referencias.php" ;/**/?-->
-		
+<head lang="en">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<title></title> 
+	<meta name="description" content="Software develpment" />	    
+	<meta name="keywords" content="development, dot net, nopcommerce, prestashop, diseño, web, programador">
+	<!--meta property="og:title" content=""-->
 
-      <!--script type="text/javascript" src="./bower_components/jquery/dist/jquery.js"></script-->
-       	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="http://www.octavio.com.ar/favicon.ico">
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">	
+
+	<link rel="stylesheet" href="fancybox/jquery.fancybox-v=2.1.5.css" type="text/css" media="screen">
+
+
+    <link rel="stylesheet" href="css/font-awesome.min.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css">	
+	
+	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600,300,200&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	
+	<script SRC="bower_components/angular/angular.min.js" TYPE="text/javascript"></script>
+
+	<script SRC="bower_components/angular-ui-router/release/angular-ui-router.min.js" TYPE="text/javascript"></script>
+
+	<script SRC="js/miAplicacion.js" TYPE="text/javascript"></script>
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<link rel="stylesheet" type="text/css" href="css/animacion.css">
-	<link rel="stylesheet" type="text/css" href="css\bootstrap\css\bootstrap.min.css">
-	<!--final de Estilos-->    
-
-
- 	<script SRC="bower_components/angular/angular.min.js" TYPE="text/javascript"></script>
- 	<script SRC="js/app.js" TYPE="text/javascript"></script>
 	
+	<link rel="prefetch" href="images/zoom.png">
+		
 </head>
-<body ng-app="ABMangularPHP" ng-controller="controlMenu">
-	<!--?php		
-		require_once"partes/barraDeMenu.php";
-	 ?-->
 
- 
-              <ul class="nav nav-tabs">
-		         <li  class="btn btn-info animated bounceInLeft" >
-		         	<a href="index.html">
-		         		 <span class="glyphicon glyphicon-list-alt">&nbsp;</span>
-		         		 Inicio 
-		         	</a>
-		         </li>
-		         <li class="btn btn-info animated bounceInLeft" >
-		         	<a href="formAlta.html">
-		         		<span class="glyphicon glyphicon-plus-sign">&nbsp;</span>
-		         		Alta
-		         	</a>
-		         </li>
-		         <li  class="btn btn-info animated bounceInLeft" >
-		         	<a href="formGrilla.html"> 
-		         		<span class="glyphicon glyphicon-th" >&nbsp;</span>
-		         			Grilla</a>
-		         		</li>
-		        	<span id="tituloBarra"  class="animated bounceInRight">{{DatoTest}}ABM - PHP - Angular Versión 1.0.1 &nbsp;&nbsp;&nbsp;</span>
-      </ul>
+<body ng-app="angularABM">
+	<div class="navbar navbar-fixed-top" data-activeslide="1">
+		<div class="container">
+		
+			<!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
+			
+			<div class="nav-collapse collapse navbar-responsive-collapse">
+				<ul class="nav row">
+					<li data-slide="1" class="col-12 col-sm-2"><a id="menu-link-1" href="index.html#/home" title="Next Section"><span class="icon icon-home"></span> <span class="text">HOME</span></a></li>
+					<li data-slide="2" class="col-12 col-sm-2"><a id="menu-link-2" href="#slide-2" title="Next Section"><span class="icon icon-user"></span> <span class="text">ABOUT US</span></a></li>
+					<li data-slide="3" class="col-12 col-sm-2"><a id="menu-link-3" href="#slide-3" title="Next Section"><span class="icon icon-briefcase"></span> <span class="text">PORTFOLIO</span></a></li>
+					<li data-slide="4" class="col-12 col-sm-2"><a id="menu-link-4" href="#slide-4" title="Next Section"><span class="icon icon-gears"></span> <span class="text">PROCESS</span></a></li>
+					<li data-slide="5" class="col-12 col-sm-2"><a id="menu-link-5" href="#slide-5" title="Next Section"><span class="icon icon-heart"></span> <span class="text">CLIENTS</span></a></li>
+					<li data-slide="6" class="col-12 col-sm-2"><a id="menu-link-6" href="#slide-6" title="Next Section"><span class="icon icon-envelope"></span> <span class="text">CONTACT</span></a></li>
+				</ul>
+				<div class="row">
+					<div class="col-sm-2 active-menu"></div>
+				</div>
+			</div><!-- /.nav-collapse -->
+		</div><!-- /.container -->
+	</div><!-- /.navbar -->
+	
+	<div ui-view>
 		
 
+	</div>
 	
-	  <div class="container">
-		<div class="page-header">
-			<center><h1>ABM - PHP - Angular</h1> </center>     
-		</div>
-	  	 
-		           
-					<div class="CajaInicio animated bounceInRight">
-							<h1>PERSONAS</h1>
-						
-							<form id="FormIngreso">
- 										
-									    <a href="formAlta.html" class="list-group-item  list-group-item list-group-item-info">
-									      <h4 class="list-group-item-heading">Alta de Personas</h4>
-									    </a>
-										
-										<a href="formGrilla.html" class="list-group-item  list-group-item list-group-item-info">
-									      <h4 class="list-group-item-heading">Grilla de Personas</h4>
-									    </a>
-									
-									  </div>
-									
-							</form>
-						</div>
-		</div>
+
+	<!-- === Slide 6 / Contact === -->
+	<div class="slide story" id="slide-6" data-slide="6">
+		<div class="container">
+			<div class="row title-row">
+				<div class="col-12 font-light">Leave us a <span class="font-semibold">message</span></div>
+			</div><!-- /row -->
+			<div class="row line-row">
+				<div class="hr">&nbsp;</div>
+			</div><!-- /row -->
+			<div class="row subtitle-row">
+				<div class="col-sm-1 hidden-sm">&nbsp;</div>
+				<div class="col-12 col-sm-10 font-light">You can find us literally anywhere, just push a button and we’re there</div>
+				<div class="col-sm-1 hidden-sm">&nbsp;</div>
+			</div><!-- /row -->
+			<div id="contact-row-4" class="row">
+				<div class="col-sm-1 hidden-sm">&nbsp;</div>
+				<!--div class="col-12 col-sm-2 with-hover-text">
+					<p><a target="_blank" href="#"><i class="icon icon-phone"></i></a></p>
+					<span class="hover-text font-light ">+44 4839-4343</span></a>
+				</div><!-- /col12 -->
+				<div class="col-12 col-sm-3 with-hover-text">
+					<p><a target="_blank" href="#"><i class="icon icon-envelope"></i></a></p>
+					<span class="hover-text font-light ">lucas_eb2004@yahoo.com.ar</span></a>
+				</div><!-- /col12 -->
+				<div class="col-12 col-sm-2 with-hover-text">
+					<p><a target="_blank" href="#"><i class="icon icon-home"></i></a></p>
+					<span class="hover-text font-light ">Buenos Aires, Argentina</span></a>
+				</div><!-- /col12 -->
+				<div class="col-12 col-sm-3 with-hover-text">
+					<p><a target="_blank" href="https://github.com/lucasbonanni"><i class="icon icon-github-alt"></i></a></p>
+					<span class="hover-text font-light ">github.com/lucasbonanni</span></a>
+				</div><!-- /col12 -->
+				<div class="col-12 col-sm-3 with-hover-text">
+					<p><a target="_blank" href="#"><i class="icon icon-twitter"></i></a></p>
+					<span class="hover-text font-light ">@ttransistor</span></a>
+				</div><!-- /col12 -->
+				<div class="col-sm-1 hidden-sm">&nbsp;</div>
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</div><!-- /Slide 6 -->
+	
 </body>
+
+	<!-- SCRIPTS -->
+	<script src="js/html5shiv.js"></script>
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="fancybox/jquery.fancybox.pack-v=2.1.5.js"></script>
+	<script src="js/script.js"></script>
+	
+	<!-- fancybox init -->
+	<script>
+	$(document).ready(function(e) {
+		var lis = $('.nav > li');
+		menu_focus( lis[0], 1 );
+		
+		$(".fancybox").fancybox({
+			padding: 10,
+			helpers: {
+				overlay: {
+					locked: false
+				}
+			}
+		});
+	
+	});
+	</script>
 </html>
