@@ -1,4 +1,4 @@
-var app = angular.module('ABMangularPHP', []);
+var app = angular.module('angularABM', []);
 
 
 app.controller('controlMenu', function($scope, $http) {
