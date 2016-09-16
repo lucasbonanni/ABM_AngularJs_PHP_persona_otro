@@ -12,6 +12,15 @@
         <link rel="stylesheet" type="text/css" href="css/animacion.css">
         <script SRC="bower_components/angular/angular.min.js" TYPE="text/javascript"></script>
         <script SRC="js/app.js" TYPE="text/javascript"></script>
+
+            <style>
+            .my-drop-zone { border: dotted 3px lightgray; margin-top:20px; padding: 80px;  }
+            .nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */
+            .another-file-over-class { border: dotted 3px green; }
+
+            html, body { height: 100%; }
+        </style>
+        
         <!--   VEX alert modal windows references
             <script type="text/javascript" language="javascript"
                   src="bower_components/jquery/dist/jquery.js"></script>
@@ -91,25 +100,35 @@
                     <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
                     <span id="inputSuccess2Status" class="sr-only">(success)</span>
                     </div-->
-                <div class="form-group has-feedback">
-                    <label class="control-label" >Apellido : </label>
-                    <input type="text" name="apellido" ng-model="persona.apellido" placeholder="ingrese apellido" value="" class="form-control"  required/>
-                    <span class="glyphicon glyphicon-ok form-control-feedback"  aria-hidden="true"" ng-show="FormIngreso.apellido.$touched && FormIngreso.apellido.$valid"></span>
-                    <span class="has-error glyphicon glyphicon-remove form-control-feedback "  ng-show="FormIngreso.apellido.$touched && FormIngreso.apellido.$invalid"></span>
-                </div>
-                <!--<span id="lblApellido" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*
-                    </span>-->
-                <div class="form-group has-feedback">
-                    <label  class="control-label">Nombre:</label>
-                    <input type="text" name="nombre"  ng-model="persona.nombre" placeholder="ingrese nombre" value=""  class="form-control" required/> 
-                    <span class="glyphicon glyphicon-ok form-control-feedback"  aria-hidden="true"" ng-show="FormIngreso.nombre.$touched && FormIngreso.nombre.$valid"></span>
-                    <span class="glyphicon glyphicon-remove form-control-feedback"  ng-show="FormIngreso.nombre.$touched && FormIngreso.nombre.$invalid"></span>
-                </div>
-                <div class="form-group has-feedback">
-                    <label class="control-label" >Edad:</label>
-                    <input type="number"  ng-model="persona.edad" placeholder="ingrese edad" value="" class="form-control" min="18" required/> 
-                    <span class="glyphicon glyphicon-ok form-control-feedback"  aria-hidden="true"" ng-show="FormIngreso.edad.$touched && FormIngreso.edad.$valid"></span>
-                    <span class="glyphicon glyphicon-remove form-control-feedback"  ng-show="FormIngreso.edad.$touched && FormIngreso.edad.$invalid"></span>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group has-feedback">
+                            <label class="control-label" >Apellido : </label>
+                            <input type="text" name="apellido" ng-model="persona.apellido" placeholder="ingrese apellido" value="" class="form-control"  required/>
+                            <span class="glyphicon glyphicon-ok form-control-feedback"  aria-hidden="true"" ng-show="FormIngreso.apellido.$touched && FormIngreso.apellido.$valid"></span>
+                            <span class="has-error glyphicon glyphicon-remove form-control-feedback "  ng-show="FormIngreso.apellido.$touched && FormIngreso.apellido.$invalid"></span>
+                        </div>
+                        <!--<span id="lblApellido" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*
+                            </span>-->
+                        <div class="form-group has-feedback">
+                            <label  class="control-label">Nombre:</label>
+                            <input type="text" name="nombre"  ng-model="persona.nombre" placeholder="ingrese nombre" value=""  class="form-control" required/> 
+                            <span class="glyphicon glyphicon-ok form-control-feedback"  aria-hidden="true"" ng-show="FormIngreso.nombre.$touched && FormIngreso.nombre.$valid"></span>
+                            <span class="glyphicon glyphicon-remove form-control-feedback"  ng-show="FormIngreso.nombre.$touched && FormIngreso.nombre.$invalid"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label class="control-label" >Edad:</label>
+                            <input type="number"  ng-model="persona.edad" placeholder="ingrese edad" value="" class="form-control" min="18" required/> 
+                            <span class="glyphicon glyphicon-ok form-control-feedback"  aria-hidden="true"" ng-show="FormIngreso.edad.$touched && FormIngreso.edad.$valid"></span>
+                            <span class="glyphicon glyphicon-remove form-control-feedback"  ng-show="FormIngreso.edad.$touched && FormIngreso.edad.$invalid"></span>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6" >
+                            <div class="well my-drop-zone" style="height=50px;   " nv-file-over="" uploader="uploader">
+                                Drop your images here
+                            </div>
+                    </div>
                 </div>
                 <div class="form-group has-feedback">
                     <label class="control-label">Fecha Nacimiento</label>
@@ -181,10 +200,19 @@
                     <input type="checkbox" id="inlineCheckbox3" value="VisualBasic"> Visual Basic
                     </label>
                 </div>
+
+                <!-- 3. nv-file-over uploader="link" over-class="className" -->
+                
+
+
                 <button class="btn btn-info " ng-disabled="FormIngreso.$invalid && persona.password!=persona.passConf && FormIngreso.password.$valid && FormIngreso.passConf.$valid" ng-click="Guardar()" ><span class="glyphicon glyphicon-save">&nbsp;</span>Guardar</</button>
                 <input type="hidden" value="" id="idParaModificar" name="agregar" />
                 <input type="hidden" value="" id="hdnAgregar" name="agregar" />
             </form>
+
+                        
+
+                
         </div>
     </body>
 </html>

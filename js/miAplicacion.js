@@ -1,6 +1,4 @@
-var miApp = angular.module('angularABM', ['ui.router']);
-
-
+var miApp = angular.module('angularABM', ['ui.router','angularFileUpload']);
 
 
 miApp.config(function($stateProvider, $urlRouterProvider)
@@ -65,3 +63,19 @@ $stateProvider
    		$urlRouterProvider.otherwise("/home");
 
 })
+
+miApp.controller('controlinicio', ['$scope', 'FileUploader',function($scope,fileuploader){
+
+
+
+	console.log('controller inicio');
+}])
+
+
+
+miApp.controller('controlPersonaMenu', ['$scope', 'FileUploader',function($scope,fileuploader){
+
+	console.log('controller persona menu');
+
+	
+}])
