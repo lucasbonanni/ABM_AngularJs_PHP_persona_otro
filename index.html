@@ -24,6 +24,8 @@
 
 	<script SRC="bower_components/angular-ui-router/release/angular-ui-router.min.js" TYPE="text/javascript"></script>
 
+	<script SRC="bower_components/angular-file-upload/dist/angular-file-upload.min.js" TYPE="text/javascript"></script>
+
 	<script SRC="js/miAplicacion.js" TYPE="text/javascript"></script>
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<link rel="stylesheet" type="text/css" href="css/animacion.css">
@@ -33,6 +35,13 @@
 </head>
 
 <body ng-app="angularABM">
+	<style>
+            .my-drop-zone { border: dotted 3px lightgray; }
+            .nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */
+            .another-file-over-class { border: dotted 3px green; }
+
+            html, body { height: 100%; }
+        </style>
 	<div class="navbar navbar-fixed-top" data-activeslide="1">
 		<div class="container">
 		
