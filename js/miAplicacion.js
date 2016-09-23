@@ -1,8 +1,17 @@
-var miApp = angular.module('angularABM', ['ui.router','angularFileUpload']);
+var miApp = angular.module('angularABM', ['ui.router','angularFileUpload', 'satellizer']);
 
 
-miApp.config(function($stateProvider, $urlRouterProvider)
+miApp.config(function($stateProvider, $urlRouterProvider,$authProvider)
 {
+
+
+$authProvider.loginUrl = 'mio/ABM_AngularJs_PHP_persona/jwt/php/auth.php';
+$authProvider.tokenName = 'MiTokenGeneradoEnPHP';
+$authProvider.tokenPrefix = 'Aplicacion';
+$authProvider.tokenHeader = 'data';
+
+
+
 
 $stateProvider
    		.state('home', 
@@ -60,6 +69,20 @@ $stateProvider
 	   			}
 	   		}
    		)
+
+   		.state('persona.login',
+	   		{
+	   			url:'/login',
+	   			views:{
+	   				'contenido':{
+	   					templateUrl:"template/login.html",
+	   					controller:'LoginCtrl'
+	   				}
+	   				
+	   			}
+	   		}
+   		)
+
    		$urlRouterProvider.otherwise("/home");
 
 })
@@ -79,3 +102,47 @@ miApp.controller('controlPersonaMenu', ['$scope', 'FileUploader',function($scope
 
 	
 }])
+
+miApp.controller('LoginCtrl',  function($scope,$auth){
+	console.info('loginController',$auth);
+
+	$scope.usuario = {};
+	$scope.usuario.correo = "usuario";
+	$scope.usuario.clave = "clave";
+
+	console.info("autenticated", $auth.getPayload());
+
+	if($auth.isAuthenticated()){
+		console.info("autenticated", $auth.getPayload());
+	} else
+	{
+		console.info("is not autenticated", $auth.getPayload());
+	}
+
+
+	$scope.iniciarSesion = function(){
+
+	$auth.login($scope.usuario)
+	  .then(function(response) {
+	    // Redirect user here after a successful log in.
+	    console.info("correcto",response);
+
+    	if($auth.isAuthenticated())
+    	{
+			console.info("autenticated", $auth.getPayload());
+		}else
+		{
+			console.info("is not autenticated", $auth.getPayload());
+		}
+
+	  })
+	  .catch(function(response) {
+	    // Handle errors here, such as displaying a notification
+	    // for invalid email and/or password.
+	    console.info("error",response);
+
+
+	  });
+	};
+
+})
